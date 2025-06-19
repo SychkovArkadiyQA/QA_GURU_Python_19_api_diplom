@@ -1,8 +1,9 @@
 from jsonschema import validate
 from schemas.user import get_user, post_user, put_user
 import allure
-from data.utils.requests_helper import api_request
+import requests
 
+endpoint = '/users/'
 
 @allure.feature("Пользователь")
 @allure.story("Получение данных о пользователе")
@@ -11,7 +12,7 @@ def test_get_single_user(base_url, headers):
     with allure.step('Отправление запроса'):
         id_user = 4
         url = base_url
-        response = api_request(url, endpoint=f"/users/{id_user}", method="GET")
+        response = requests.get(f'{url}{endpoint}{id_user}', headers=headers)
 
     with allure.step('Проверка кода'):
         assert response.status_code == 200
@@ -31,7 +32,7 @@ def test_post_create_user(base_url, headers):
             "job": "team-leader"
         }
         url = base_url
-        response = api_request(url, endpoint="/users/", method="POST", data=payload)
+        response = requests.post(f'{url}{endpoint}', data=payload, headers=headers)
 
     with allure.step('Проверка кода'):
         assert response.status_code == 201
@@ -45,7 +46,7 @@ def test_post_create_user(base_url, headers):
 @allure.feature("Пользователь")
 @allure.story("Редактирование пользователя")
 @allure.title("Редактирование существующего пользователя")
-def test_put_user(base_url):
+def test_put_user(base_url, headers):
     with allure.step('Отправление запроса'):
         id_user = 4
         payload = {
@@ -53,7 +54,7 @@ def test_put_user(base_url):
             "job": "team-leader"
         }
         url = base_url
-        response = api_request(url, endpoint=f"/users/{id_user}", method="PUT", data=payload)
+        response = requests.put(f'{url}{endpoint}{id_user}', data=payload, headers=headers)
 
     with allure.step('Проверка кода'):
         assert response.status_code == 200
@@ -67,11 +68,11 @@ def test_put_user(base_url):
 @allure.feature("Пользователь")
 @allure.story("Удаление пользователя")
 @allure.title("Удаление существующего пользователя")
-def test_delete_user(base_url):
+def test_delete_user(base_url, headers):
     with allure.step('Отправление запроса'):
         id_user = 4
         url = base_url
-        response = api_request(url, endpoint=f"/users/{id_user}", method="DELETE")
+        response = requests.delete(f'{url}{endpoint}{id_user}', headers=headers)
 
     with allure.step('Проверка кода'):
         assert response.status_code == 204

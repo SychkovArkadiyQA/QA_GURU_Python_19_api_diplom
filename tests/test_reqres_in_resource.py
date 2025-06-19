@@ -1,8 +1,9 @@
 from jsonschema import validate
 import json
 import allure
+import requests
 from data.utils import path
-from data.utils.requests_helper import api_request
+
 
 
 @allure.feature("Получение данных о товаре")
@@ -12,7 +13,7 @@ def test_get_single_resource(base_url, headers):
     with allure.step('Отправление запроса'):
         id_user = 4
         url = base_url
-        response = api_request(url, endpoint=f"/unknown/{id_user}", method="GET")
+        response = requests.get(f"{base_url}/unknown/{id_user}", headers=headers)
 
     with allure.step('Проверка кода'):
         assert response.status_code == 200
@@ -34,7 +35,7 @@ def test_get_single_resource_not_found(base_url, headers):
     with allure.step('Отправление запроса'):
         id_user = 45
         url = base_url
-        response = api_request(url, endpoint=f"/unknown/{id_user}", method="GET")
+        response = requests.get(f"{base_url}/unknown/{id_user}", headers=headers)
 
     with allure.step('Проверка кода'):
         assert response.status_code == 404

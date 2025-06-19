@@ -1,9 +1,10 @@
 import json
 from jsonschema import validate
 import allure
+import requests
 from data.utils import path
-from data.utils.requests_helper import api_request
 
+endpoint = '/register/'
 
 @allure.feature("Регистрация пользователя")
 @allure.story("Регистрация нового пользователя")
@@ -15,7 +16,7 @@ def test_post_register_success(base_url, headers):
             "password": "pistol"
         }
         url = base_url
-        response = api_request(url, endpoint="/register", method="POST", data=payload)
+        response = requests.post(f'{url}{endpoint}', data=payload, headers=headers)
 
     with allure.step('Проверка кода'):
        assert response.status_code == 200
@@ -36,7 +37,7 @@ def test_post_register_fail(base_url, headers):
             "email": "sydney@fife"
         }
         url = base_url
-        response = api_request(url, endpoint="/register", method="POST", data=payload)
+        response = requests.post(f'{url}{endpoint}', data=payload, headers=headers)
 
     with allure.step('Проверка кода'):
         assert response.status_code == 400

@@ -3,7 +3,6 @@ from jsonschema import validate
 import re
 import allure
 from data.utils import path
-from data.utils.requests_helper import api_request
 import requests
 
 endpoint = '/login/'
@@ -20,7 +19,6 @@ def test_post_login_success(base_url, headers):
         }
         url = base_url
         response = requests.post(f'{url}{endpoint}', data=payload, headers=headers)
-        body = response.json()
         token = response.json().get("token")
         token_pattern = r"^[A-Za-z0-9]+$"
 
