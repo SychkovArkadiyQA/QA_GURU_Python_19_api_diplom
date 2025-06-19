@@ -8,7 +8,7 @@ from data.utils.requests_helper import api_request
 @allure.feature("Получение данных о товаре")
 @allure.story("Получение данных об одном товаре")
 @allure.title("Получение данных о существующем товаре")
-def test_get_single_resource(base_url):
+def test_get_single_resource(base_url, headers):
     with allure.step('Отправление запроса'):
         id_user = 4
         url = base_url
@@ -30,7 +30,7 @@ def test_get_single_resource(base_url):
 @allure.feature("Получение данных о товаре")
 @allure.story("Получение данных об одном товаре")
 @allure.title("Проверка ошибки при получении данных о несуществующем товаре")
-def test_get_single_resource_not_found(base_url):
+def test_get_single_resource_not_found(base_url, headers):
     with allure.step('Отправление запроса'):
         id_user = 45
         url = base_url

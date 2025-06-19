@@ -8,7 +8,7 @@ from data.utils.requests_helper import api_request
 @allure.feature("Регистрация пользователя")
 @allure.story("Регистрация нового пользователя")
 @allure.title("Успешная регистрация нового пользователя")
-def test_post_register_success(base_url):
+def test_post_register_success(base_url, headers):
     with allure.step('Отправление запроса'):
         payload = {
             "email": "eve.holt@reqres.in",
@@ -30,7 +30,7 @@ def test_post_register_success(base_url):
 @allure.feature("Регистрация пользователя")
 @allure.story("Регистрация нового пользователя")
 @allure.title("Неуспешная регистрация нового пользователя")
-def test_post_register_fail(base_url):
+def test_post_register_fail(base_url, headers):
     with allure.step('Отправление запроса'):
         payload = {
             "email": "sydney@fife"

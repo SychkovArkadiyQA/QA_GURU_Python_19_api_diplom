@@ -7,7 +7,7 @@ from data.utils.requests_helper import api_request
 @allure.feature("Пользователь")
 @allure.story("Получение данных о пользователе")
 @allure.title("Получение данных о существующем пользователе")
-def test_get_single_user(base_url):
+def test_get_single_user(base_url, headers):
     with allure.step('Отправление запроса'):
         id_user = 4
         url = base_url
@@ -24,7 +24,7 @@ def test_get_single_user(base_url):
 @allure.feature("Пользователь")
 @allure.story("Создание нового пользователя")
 @allure.title("Успешное создание нового пользователя")
-def test_post_create_user(base_url):
+def test_post_create_user(base_url, headers):
     with allure.step('Отправление запроса'):
         payload = {
             "name": "Jhon",
