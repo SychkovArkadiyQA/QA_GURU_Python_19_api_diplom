@@ -5,6 +5,11 @@ __pycache__/
 
 # C extensions
 *.so
+.idea
+.notification
+.tests/allure-results
+.env
+.venv
 
 # Distribution / packaging
 .Python
