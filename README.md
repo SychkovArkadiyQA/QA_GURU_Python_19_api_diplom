@@ -68,8 +68,7 @@ allure serve tests/allure-results/
 
 <details><summary>2. Нажать на Build now</summary>
 
-![img.png](img.png)<img src="resources/jenkins1.png">
-
+![img_1.png](img_1.png)!
 </details>
 
 <details><summary>3. Дождаться окончания выполнения автотестов и нажать на иконку allure <img src="https://camo.githubusercontent.com/501c9d05b6660ba5e1a8753b8461e60d7ff1614656102c254ab800e14a6b19fa/68747470733a2f2f616c6c7572657265706f72742e6f72672f7075626c69632f696d672f616c6c7572652d7265706f72742e737667" title="allure" alt="allure" width="20" height="20"/> для просмотра отчета</summary>
