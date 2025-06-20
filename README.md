@@ -77,11 +77,11 @@ allure serve tests/allure-results/
 
 </details>
 
-## <img src="https://camo.githubusercontent.com/501c9d05b6660ba5e1a8753b8461e60d7ff1614656102c254ab800e14a6b19fa/68747470733a2f2f616c6c7572657265706f72742e6f72672f7075626c69632f696d672f616c6c7572652d7265706f72742e737667" title="allure" alt="allure" width="30" height="30"/> Отчет в <a href = "https://jenkins.autotests.cloud/job/reqres-in-project-tests/allure/">Allure report</a>
+## Отчет в Allure report
 
 <details><summary>Основной отчет</summary>
 
-<img src="resources/allure_base_report.png">
+![img_3.png](img_3.png)
 
 </details>
 <details><summary>Тесты</summary>
