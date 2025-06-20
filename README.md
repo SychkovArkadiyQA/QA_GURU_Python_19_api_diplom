@@ -11,7 +11,9 @@
 <img src="resources/AllureTestOps.png" width="40" height="40"  alt="Allure TestOps"/> 
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pycharm/pycharm-original.svg" title="pycharm" alt="pycharm" width="40" height="40"/>&nbsp
 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" title="telegram" alt="telegram" width="40" height="40"/>&nbsp
+<img src="https://molecula.gallerycdn.vsassets.io/extensions/molecula/allure-test-reports/1.1/1474455326332/Microsoft.VisualStudio.Services.Icons.Default" height='40'  width='40'/>
 </div>
+
 
 ## Список автоматизированных тест-кейсов:
 1. Проверка успешной регистрации нового пользователя
