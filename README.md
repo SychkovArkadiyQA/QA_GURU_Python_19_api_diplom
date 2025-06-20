@@ -79,7 +79,7 @@ allure serve tests/allure-results/
 
 </details>
 
-## Отчет в Allure report
+## <img src="https://molecula.gallerycdn.vsassets.io/extensions/molecula/allure-test-reports/1.1/1474455326332/Microsoft.VisualStudio.Services.Icons.Default" height='40'  width='40'/> Отчет в Allure report
 
 <details><summary>Основной отчет</summary>
 
