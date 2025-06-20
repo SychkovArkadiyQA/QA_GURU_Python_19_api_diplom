@@ -96,13 +96,13 @@ allure serve tests/allure-results/
 
 <details><summary>Основной отчет</summary>
 
-<img src="resources/testOps_base_report.png">
+
 
 </details>
 
 <details><summary>Тесты</summary>
 
-<img src="resources/testOps_tests.png">
+
 
 </details>
 
