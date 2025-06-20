@@ -64,11 +64,11 @@ allure serve tests/allure-results/
 
 Удаленный запуск автотестов осуществляется при помощи Jenkins. Для этого необходимо выполнить следующие действия:
 
-1. Открыть [проект на Jenkins]
+1. Открыть проект на Jenkins
 
 <details><summary>2. Нажать на Build now</summary>
 
-<img src="resources/jenkins1.png">
+![img.png](img.png)<img src="resources/jenkins1.png">
 
 </details>
 
