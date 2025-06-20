@@ -70,12 +70,12 @@ allure serve tests/allure-results/
 
 <details><summary>2. Нажать на Build now</summary>
 
-![img_1.png](img_1.png)
+![img_1.png](resources/img_1.png)
 </details>
 
 <details><summary>3. Дождаться окончания выполнения автотестов и нажать на иконку allure для просмотра отчета</summary>
 
-![img_2.png](img_2.png)
+![img_2.png](resources/img_2.png)
 
 </details>
 
@@ -83,12 +83,12 @@ allure serve tests/allure-results/
 
 <details><summary>Основной отчет</summary>
 
-![img_3.png](img_3.png)
+![img_3.png](resources/img_3.png)
 
 </details>
 <details><summary>Тесты</summary>
 
-![img_4.png](img_4.png)
+![img_4.png](resources/img_4.png)
 
 </details>
 
