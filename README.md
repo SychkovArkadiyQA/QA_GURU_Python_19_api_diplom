@@ -86,7 +86,7 @@ allure serve tests/allure-results/
 </details>
 <details><summary>Тесты</summary>
 
-<img src="resources/allure_tests.png">
+![img_4.png](img_4.png)
 
 </details>
 
