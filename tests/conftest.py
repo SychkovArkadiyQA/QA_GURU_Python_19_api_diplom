@@ -12,3 +12,4 @@ def headers():
     headers = {
         "x-api-key": "reqres-free-v1"}
     return headers
+
