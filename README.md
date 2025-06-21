@@ -41,7 +41,7 @@ git clone https://github.com/SychkovArkadiyQA/QA_GURU_Python_19_api_diplom
 <details><summary>2. Установить зависимости и запустить тесты</summary>
 
 ```
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 pytest .
