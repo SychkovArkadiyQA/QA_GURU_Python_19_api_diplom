@@ -1,0 +1,5 @@
+2025-06-20 03:26:27 INFO Request: https://reqres.in/api/register
+2025-06-20 03:26:27 INFO INFO Request body: email=eve.holt%40reqres.in&password=pistol
+2025-06-20 03:26:27 INFO Request headers: {'User-Agent': 'python-requests/2.32.4', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '42', 'Content-Type': 'application/x-www-form-urlencoded'}
+2025-06-20 03:26:27 INFO Response code 401
+2025-06-20 03:26:27 INFO Response: {"error":"Missing API key.","how_to_get_one":"https://reqres.in/signup"}
