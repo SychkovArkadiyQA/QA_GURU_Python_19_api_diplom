@@ -56,11 +56,6 @@ allure serve tests/allure-results/
 ```
 </details>
 
-<details><summary>4. После выполнения команды откроется браузер с отчетом</summary>
-    
-<img src="resources/allure_local.png">
-
-</details>
 
 ### **Удалённо**
 
