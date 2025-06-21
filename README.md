@@ -43,8 +43,7 @@ git clone https://github.com/SychkovArkadiyQA/QA_GURU_Python_19_api_diplom
 ```
 python -m venv .venv
 source .venv/bin/activate
-pip install poetry
-poetry install
+pip install -r requirements.txt
 pytest .
 ```
 </details>
