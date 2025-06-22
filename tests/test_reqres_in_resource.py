@@ -3,17 +3,15 @@ import json
 import allure
 import requests
 from data.utils import path
-
-
+from tests.api import get_unknown
 
 @allure.feature("Получение данных о товаре")
 @allure.story("Получение данных об одном товаре")
 @allure.title("Получение данных о существующем товаре")
-def test_get_single_resource(base_url, headers):
+def test_get_single_resource():
     with allure.step('Отправление запроса'):
         id_user = 4
-        url = base_url
-        response = requests.get(f"{base_url}/unknown/{id_user}", headers=headers)
+        response = get_unknown(id_user)
 
     with allure.step('Проверка кода'):
         assert response.status_code == 200
@@ -31,11 +29,10 @@ def test_get_single_resource(base_url, headers):
 @allure.feature("Получение данных о товаре")
 @allure.story("Получение данных об одном товаре")
 @allure.title("Проверка ошибки при получении данных о несуществующем товаре")
-def test_get_single_resource_not_found(base_url, headers):
+def test_get_single_resource_not_found():
     with allure.step('Отправление запроса'):
         id_user = 45
-        url = base_url
-        response = requests.get(f"{base_url}/unknown/{id_user}", headers=headers)
+        response = get_unknown(id_user)
 
     with allure.step('Проверка кода'):
         assert response.status_code == 404

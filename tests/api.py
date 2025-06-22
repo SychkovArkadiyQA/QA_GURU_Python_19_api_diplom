@@ -26,3 +26,7 @@ def post_login(payload):
 def post_register(payload):
     response = base_api(method="POST", endpoint="/register/", json=payload)
     return response
+
+def get_unknown(id_user):
+    response = base_api(method="GET", endpoint=f"/unknown/{id_user}")
+    return response
