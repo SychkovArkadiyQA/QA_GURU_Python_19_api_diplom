@@ -4,21 +4,20 @@ import re
 import allure
 from data.utils import path
 import requests
-
-endpoint = '/login/'
+from tests.api import post_login
 
 
 @allure.feature("Авторизация пользователя")
 @allure.story("Авторизация пользователя")
 @allure.title("Успешная авторизация пользователя")
-def test_post_login_success(base_url, headers):
+def test_post_login_success():
     with allure.step('Отправление запроса'):
         payload = {
             "email": "eve.holt@reqres.in",
             "password": "pistol"
         }
-        url = base_url
-        response = requests.post(f'{url}{endpoint}', data=payload, headers=headers)
+
+        response = post_login(payload)
         token = response.json().get("token")
         token_pattern = r"^[A-Za-z0-9]+$"
 
@@ -34,20 +33,18 @@ def test_post_login_success(base_url, headers):
             schema = json.load(file)
         validate(response.json(), schema)
 
-
 @allure.feature("Авторизация пользователя")
 @allure.story("Авторизация пользователя")
 @allure.title("Неуспешная авторизация пользователя")
-def test_post_login_fail(base_url, headers):
+def test_post_login_fail():
     with allure.step('Отправление запроса'):
         payload = {
             "email": "petya@gmail"
         }
-        url = base_url
-        response = requests.post(f'{url}{endpoint}', data=payload, headers=headers)
+        response = post_login(payload)
 
-    with allure.step('Проверка кода'):
-        assert response.status_code == 400
+        with allure.step('Проверка кода'):
+            assert response.status_code == 400
 
-    with allure.step('Проверка текста ошибки'):
-        assert response.json()['error'] == "Missing password"
+        with allure.step('Проверка текста ошибки'):
+            assert response.json()['error'] == "Missing password"
