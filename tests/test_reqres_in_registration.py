@@ -3,20 +3,20 @@ from jsonschema import validate
 import allure
 import requests
 from data.utils import path
+from tests.api import post_register
 
-endpoint = '/register/'
+
 
 @allure.feature("Регистрация пользователя")
 @allure.story("Регистрация нового пользователя")
 @allure.title("Успешная регистрация нового пользователя")
-def test_post_register_success(base_url, headers):
+def test_post_register_success():
     with allure.step('Отправление запроса'):
         payload = {
             "email": "eve.holt@reqres.in",
             "password": "pistol"
         }
-        url = base_url
-        response = requests.post(f'{url}{endpoint}', data=payload, headers=headers)
+        response = post_register(payload)
 
     with allure.step('Проверка кода'):
        assert response.status_code == 200
@@ -31,13 +31,12 @@ def test_post_register_success(base_url, headers):
 @allure.feature("Регистрация пользователя")
 @allure.story("Регистрация нового пользователя")
 @allure.title("Неуспешная регистрация нового пользователя")
-def test_post_register_fail(base_url, headers):
+def test_post_register_fail():
     with allure.step('Отправление запроса'):
         payload = {
             "email": "sydney@fife"
         }
-        url = base_url
-        response = requests.post(f'{url}{endpoint}', data=payload, headers=headers)
+        response = post_register(payload)
 
     with allure.step('Проверка кода'):
         assert response.status_code == 400
