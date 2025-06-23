@@ -4,3 +4,4 @@ allure-pytest>=2.13.5
 requests>=2.32.2
 #allure_commons
 jsonschema
+python-dotenv

@@ -1,11 +1,18 @@
+import os
+import dotenv
+from dotenv import load_dotenv
 import requests
 
 from core.utils.logging_helper import logging_helper
 
-url_ = 'https://reqres.in/api'
-headers = {
-    "x-api-key": "reqres-free-v1"}
+load_dotenv()
+header = os.getenv("HEADER")
+token = os.getenv("TOKEN")
 
+url_ = os.getenv('URL')
+headers = {
+    header: token
+}
 
 def base_api(method, endpoint, **kwargs):
     url = f"{url_}{endpoint}"
