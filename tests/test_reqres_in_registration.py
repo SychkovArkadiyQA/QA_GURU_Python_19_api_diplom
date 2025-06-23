@@ -1,9 +1,8 @@
 import json
 from jsonschema import validate
 import allure
-import requests
-from data.utils import path
-from tests.api import post_register
+from core.utils import path
+from core.reqeust_api import post_register
 
 
 
@@ -22,7 +21,7 @@ def test_post_register_success():
        assert response.status_code == 200
 
     with allure.step('Проверка схемы'):
-        schema_path = path.abs_path_from_project('schemas/register.json')
+        schema_path = path.abs_path_from_project('resources/schemas/register.json')
         with open(schema_path) as file:
             schema = json.load(file)
         validate(response.json(), schema)

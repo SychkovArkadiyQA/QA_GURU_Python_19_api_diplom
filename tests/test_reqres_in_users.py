@@ -1,8 +1,7 @@
 from jsonschema import validate
-from schemas.user import get_user, post_user, put_user
+from resources.schemas.user import get_user, post_user, put_user
 import allure
-import requests
-from tests.api import get_users, post_users, put_users, delete_users
+from core.reqeust_api import get_users, post_users, put_users, delete_users
 
 @allure.feature("Пользователь")
 @allure.story("Получение данных о пользователе")

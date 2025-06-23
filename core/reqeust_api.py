@@ -1,6 +1,6 @@
 import requests
 
-from data.utils.logging_helper import logging_helper
+from core.utils.logging_helper import logging_helper
 
 url_ = 'https://reqres.in/api'
 headers = {

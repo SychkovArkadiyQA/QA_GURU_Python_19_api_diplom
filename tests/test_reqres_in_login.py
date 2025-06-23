@@ -2,9 +2,8 @@ import json
 from jsonschema import validate
 import re
 import allure
-from data.utils import path
-import requests
-from tests.api import post_login
+from core.utils import path
+from core.reqeust_api import post_login
 
 
 @allure.feature("Авторизация пользователя")
@@ -28,7 +27,7 @@ def test_post_login_success():
         assert re.match(token_pattern, token)
 
     with allure.step('Проверка схемы'):
-        schema_path = path.abs_path_from_project('schemas/login.json')
+        schema_path = path.abs_path_from_project('resources/schemas/login.json')
         with open(schema_path) as file:
             schema = json.load(file)
         validate(response.json(), schema)

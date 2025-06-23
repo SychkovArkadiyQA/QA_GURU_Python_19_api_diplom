@@ -1,9 +1,8 @@
 from jsonschema import validate
 import json
 import allure
-import requests
-from data.utils import path
-from tests.api import get_unknown
+from core.utils import path
+from core.reqeust_api import get_unknown
 
 @allure.feature("Получение данных о товаре")
 @allure.story("Получение данных об одном товаре")
@@ -20,7 +19,7 @@ def test_get_single_resource():
         assert response.json()['data']['id'] == id_user
 
     with allure.step('Проверка схемы'):
-        schema_path = path.abs_path_from_project('schemas/resource.json')
+        schema_path = path.abs_path_from_project('resources/schemas/resource.json')
         with open(schema_path) as file:
             schema = json.load(file)
         validate(response.json(), schema)
